@@ -1,0 +1,54 @@
+.radio-button-label {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    text-align: right;
+    font-weight: 200;
+}
+
+.radio-button-field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.radio-button {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+}
+
+.fake_radio {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+    margin-top: 3px;
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.radio-button-field > input[type="radio"]:checked + span {
+    background-color: black;
+}
+
+p {
+    font-weight: 200;
+}
+
+.product_container {
+    margin: 0 auto 0 auto;
+}

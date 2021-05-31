@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="http://sdks.shopifycdn.com/buy-button/1.0.0/buybutton.js"></script>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="css/webflow.css" rel="stylesheet" type="text/css">
+        <link href="css/fr-product-page.webflow.css" rel="stylesheet" type="text/css">
+        <script>
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            // var productId = url.searchParams.get("productId");
+
+            var client = ShopifyBuy.buildClient({
+                domain: "webprism.myshopify.com",
+                storefrontAccessToken: 'ef68cc186fb5d8db38a709863556a586'
+            });
+
+            var productId = '';
+        </script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div style="max-width: 960px" class="product_container">
+            <div id="my-product"></div>
+        </div>
+    </body>
+    <script type="module" src="all.js"></script>
+    <script type="module" src="product.js"></script>
+</html>
