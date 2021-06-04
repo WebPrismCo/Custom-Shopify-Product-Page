@@ -1,5 +1,5 @@
 // var gid = atob(productId).substring(20);
-var productId = 6725525766317,
+var buyButtonId = 6725525766317,
 selectedOptions = {};
 
 var ui = ShopifyBuy.UI.init(client);
