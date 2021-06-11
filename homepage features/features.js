@@ -1,9 +1,13 @@
-const base_elem = document.getElementById('product_features');
+// const base_elem = document.getElementById('product_features');
 
-var client = ShopifyBuy.buildClient({
-    domain: "webprism.myshopify.com",
-    storefrontAccessToken: 'ef68cc186fb5d8db38a709863556a586'
-});
+// var client = ShopifyBuy.buildClient({
+//     domain: "frankrelle.myshopify.com",
+//     storefrontAccessToken: '50c29f9cb69bf6a23e89e19095c2333a'
+// });
+
+const e = (e) => {
+    return document.getElementById(e) 
+};
 
 const getProduct = (id) => {
     client.product.fetch(id).then((product) => {
@@ -14,53 +18,55 @@ const getProduct = (id) => {
         });
 }
 
-const createWrapper = (collection) => {
-    let elem = document.createElement("div");
-    elem.id = collection.id.toString();
-    elem.classList.add("collection_wrapper");
+const findLowestPrice = (p) => {
+    let prices = p.variants.map(v => parseInt(v.price));
 
-    let collection_title = document.createElement("h1");
-    collection_title.innerHTML = collection.title;
-
-    elem.appendChild(collection_title);
-
-    return elem;
-}
-
-const createProduct = (product) => {
-    let elem = document.createElement("div");
-    elem.id = product.id.toString();
-
-    let product_img = document.createElement('img');
-    product_img.src = product.images[0].src;
-
-    elem.appendChild(product_img);
-
-    let product_title = document.createElement("p");
-    product_title.innerHTML = product.title;
-
-    elem.appendChild(product_title);
-
-    return elem;
+    return Math.min(...prices)
 
 }
 
-client.collection.fetchAllWithProducts().then((collections) => {
-    console.log(collections);
+const createRecentWorkLeft = (product) => {
+    //sets large lefthand photo image.
+    e("recent-work-left-image").src = product.images[0].src;
+    e("recent-work-1").innerHTML = product.title;
+    e("recent-work-price-left").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    collections.forEach((c) => {
-        let new_wrapper = createWrapper(c);
-        base_elem.appendChild(new_wrapper);
+    //need collection solution before implementing
+    // e("recent-work-collection-left").innerHTML = "";
 
-        let products = c.products;
+    e("recent-work-purchase-left").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
 
-        products.forEach((p) => {
-            let new_product_elem = createProduct(p);
+}
 
-            new_wrapper.appendChild(new_product_elem);
-        })
-    })
+const createRecentWorkRight = (product) => {
+    //sets smaller righthand photo image
+    e("recent-work-image-right").src = product.images[0].src;
+    e("recent-work-title-right").innerHTML = product.title;
+    e("recent-work-price-right").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
+    e("recent-work-purchase-right").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+}
 
+const createRecentWorkThird = (product) => {
+    e("recent-work-large-img").src = product.images[0].src;
+    e("recent-work-large-title").innerHTML = product.title;
+    e("recent-work-large-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
+
+    e("recent-work-large-purchase").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+}
+
+// client.collection.fetchAllWithProducts().then((collections) => {
+//     let recentWork = collections.find(c => c.title === "Website Collection: Recent Work");
+//     console.log(recentWork.products)
+//     createRecentWorkLeft(recentWork.products[0]);
+//     createRecentWorkRight(recentWork.products[1]);
+//     createRecentWorkThird(recentWork.products[2]);
+    
+// });
+
+client.product.fetchAll().then((products) => {
+    console.log(products)
+    createRecentWorkLeft(products[0]);
+    createRecentWorkRight(products[1]);
+    createRecentWorkThird(products[2]);
 });
-

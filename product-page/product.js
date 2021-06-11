@@ -1,6 +1,9 @@
 // var gid = atob(productId).substring(20);
-var buyButtonId = 6725525766317,
-selectedOptions = {};
+var url_string = window.location.href;
+var url = new URL(url_string);
+var buyButtonId = url.searchParams.get("productId"); 
+
+var selectedOptions = {};
 
 var ui = ShopifyBuy.UI.init(client);
 
