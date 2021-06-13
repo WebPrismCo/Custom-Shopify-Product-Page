@@ -1,6 +1,6 @@
-const e = (e) => {
-    return document.getElementById(e) 
-};
+// const e = (e) => {
+//     return document.getElementById(e) 
+// };
 
 const getProduct = (id) => {
     client.product.fetch(id).then((product) => {
