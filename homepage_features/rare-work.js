@@ -1,16 +1,3 @@
-// const e = (e) => {
-//     return document.getElementById(e) 
-// };
-
-const getProduct = (id) => {
-    client.product.fetch(id).then((product) => {
-        // Do something with the product
-            console.log(product)
-        }).catch(error => {
-            console.log(error)
-        });
-}
-
 const findLowestPrice = (p) => {
     let prices = p.variants.map(v => parseInt(v.price));
 
@@ -56,10 +43,3 @@ client.collection.fetchAllWithProducts().then((collections) => {
     createrareWorkThird(rareWork.products[2]);
     
 });
-
-// client.product.fetchAll().then((products) => {
-//     console.log(products)
-//     createrareWorkLeft(products[0]);
-//     createrareWorkRight(products[1]);
-//     createrareWorkThird(products[2]);
-// });
