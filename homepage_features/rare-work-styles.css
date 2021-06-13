@@ -1935,6 +1935,16 @@
   margin-top: 140px;
 }
 
+@media screen and (max-width: 991px) {
+  .grid-2 {
+    display: block;
+  }
+
+  .rare-work-right {
+    margin-top: 140px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .grid {
     display: block;
