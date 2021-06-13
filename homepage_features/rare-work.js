@@ -25,12 +25,11 @@ const createrareWorkThird = (product) => {
     e("rare-work-large-title").innerHTML = product.title;
     e("rare-work-large-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("rare-work-large-purchase").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-large-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 }
 
 client.collection.fetchAllWithProducts().then((collections) => {
     let rareWork = collections.find(c => c.title === "Website Collection: Rare Work");
-    console.log(rareWork.products)
     createrareWorkLeft(rareWork.products[0]);
     createrareWorkRight(rareWork.products[1]);
     createrareWorkThird(rareWork.products[2]);

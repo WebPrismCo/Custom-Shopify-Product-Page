@@ -25,7 +25,7 @@ const createRecentWorkThird = (product) => {
     e("recent-work-large-title").innerHTML = product.title;
     e("recent-work-large-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("recent-work-large-purchase").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-large-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 }
 
 // client.collection.fetchAllWithProducts().then((collections) => {
@@ -38,7 +38,6 @@ const createRecentWorkThird = (product) => {
 // });
 
 client.product.fetchAll().then((products) => {
-    console.log(products)
     createRecentWorkLeft(products[0]);
     createRecentWorkRight(products[1]);
     createRecentWorkThird(products[2]);
