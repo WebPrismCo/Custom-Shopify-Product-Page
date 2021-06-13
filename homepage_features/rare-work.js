@@ -1,10 +1,3 @@
-const findLowestPrice = (p) => {
-    let prices = p.variants.map(v => parseInt(v.price));
-
-    return Math.min(...prices)
-
-}
-
 const createrareWorkLeft = (product) => {
     //sets large lefthand photo image.
     e("rare-work-left-img").src = product.images[0].src;

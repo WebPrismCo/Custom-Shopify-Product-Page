@@ -6,3 +6,10 @@ var client = ShopifyBuy.buildClient({
 const e = (e) => {
     return document.getElementById(e) 
 };
+
+const findLowestPrice = (p) => {
+    let prices = p.variants.map(v => parseInt(v.price));
+
+    return Math.min(...prices)
+
+}
