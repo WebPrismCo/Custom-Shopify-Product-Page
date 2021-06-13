@@ -22,7 +22,10 @@ ui.createComponent('product', {
                                                 <img alt="{{data.currentImage.altText}}" data-element="product.img" class="{{data.classes.product.img}}" src="{{data.currentImage.srcLarge}}" />
                                             </div>
                                         {{/data.currentImage.srcLarge}}
-                                        <div class="detail_container">
+                                        <div class="detail_container" id="detail_container">
+                                            <div>
+                                                <h1 class="{{data.classes.product.title}}" data-element="product.title">{{data.title}}</h1>
+                                            </div>
                                             <div>
                                                 {{#data.hasVariants}}
                                                     {{#data.options}}
@@ -41,9 +44,9 @@ ui.createComponent('product', {
                                         </div>
                                     </div>
                                 </div>`,
-            footer: `<div class="product_footer">
+                footer: `<div class="product_footer">
                         <div id="w-node-_164e7708-68ac-ca47-0b9a-f82be4cdf052-62c7c7ee" class="div-block-6">
-                            <div class="text-block">Order now (framed) deliveries typically ship 4 - 6 weeks</div>
+                            <div class="text-block">Order now (framed) deliveries</div><div class="text-block">typically ship 4 - 6 weeks</div>
                         </div>
                         <div id="w-node-_86f9db59-f15b-8f94-8e84-8057117d35fd-62c7c7ee">
                             <div class="text-block-2">
@@ -108,20 +111,49 @@ ui.createComponent('product', {
       }
 })
 .then(() => {
-    var product = ui.components.product.filter(function (product) {
-        return product.id === buyButtonId;
-    })[0];
+    var product = ui.components.product.filter(function (p) {
+        return p.id === buyButtonId;
+    });
+
+    return product[0];
+})
+.then((product) => {
 
     selectedOptions = product.selectedOptions;
 
     const variantNames = Object.keys(selectedOptions);
     const variantOptions = Object.values(selectedOptions);
 
-    variantNames.forEach((name) => {
-        var id = name + selectedOptions[name];
-        document.getElementById(id).checked = true;
-    })
+    if(product.hasVariants === true){
+        // const variantNames = Object.keys(selectedOptions);
+        // const variantOptions = Object.values(selectedOptions);
 
+        variantNames.forEach((name) => {
+            var id = name + selectedOptions[name];
+            document.getElementById(id).checked = true;
+        });
+    } else {
+
+        let detCon = document.getElementById("detail_container");
+
+        variantNames.forEach((o) => {
+            let new_node = document.createElement("div");
+            new_node.classList.add("no-variant-text");
+
+            new_node.appendChild(document.createTextNode("Available as: "));
+            // new_node.appendChild(document.createTextNode(product.selectedOptions[o]));
+
+            let variant_node = document.createElement("div");
+            variant_node.classList.add("no-variant-description");
+            variant_node.innerHTML = `${product.selectedOptions[o]}`;
+
+            detCon.appendChild(new_node);
+            detCon.appendChild(variant_node);
+        })
+
+
+    }
+    
     var buttonArray = document.querySelectorAll('.radio-button-field');
     var fakeButtonArray = document.querySelectorAll('.fake_radio');
 

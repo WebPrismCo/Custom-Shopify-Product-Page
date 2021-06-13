@@ -1,6 +1,7 @@
-  @font-face {
+/* webflow stock css */
+@font-face {
     font-family: 'webflow-icons';
-    src: url("data:application/x-font-ttf;charset=utf-8;base64,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") format('truetype');
+    /* src: url("data:application/x-font-ttf;charset=utf-8;base64,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") format('truetype'); */
     font-weight: normal;
     font-style: normal;
   }
@@ -1026,10 +1027,10 @@
     -ms-user-select: none;
     user-select: none;
   }
-  .w-slider-arrow-left [class^="w-icon-"],
-  .w-slider-arrow-right [class^="w-icon-"],
-  .w-slider-arrow-left [class*=" w-icon-"],
-  .w-slider-arrow-right [class*=" w-icon-"] {
+  .w-slider-arrow-left [class^='w-icon-'],
+  .w-slider-arrow-right [class^='w-icon-'],
+  .w-slider-arrow-left [class*=' w-icon-'],
+  .w-slider-arrow-right [class*=' w-icon-'] {
     position: absolute;
   }
   .w-slider-arrow-left:focus,
@@ -1063,6 +1064,9 @@
     padding: 0;
     position: absolute;
     width: 1px;
+  }
+  .w-slider-force-show {
+    display: block !important;
   }
   .w-dropdown {
     display: inline-block;
@@ -1807,190 +1811,204 @@
   .w-condition-invisible {
     display: none !important;
   }
+  
+/* end webflow stock */
+/* custom webflow css */
+.w-layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
 
-  /* start custom css */
-  @font-face {
-    font-family: 'Nhaasgroteskdspro 45lt';
-    src: url('../../fonts/neue_haas/NHaasGroteskDSPro-45Lt.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Garamondpremrpro';
-    src: url('../../fonts/garamond/GaramondPremrPro.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
+.grid {
+  grid-column-gap: 16px;
+  grid-template-areas: "Area Area Area Area Area-2 Area-2"
+    "Area Area Area Area Area-2 Area-2"
+    "Area Area Area Area Area-2 Area-2"
+    "Area Area Area Area . .";
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
 
-  .product_container {
-    font-family: 'Nhaasgroteskdspro 45lt';
-  }
-  
-  .div-block {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    background-color: #e0e0e0;
-  }
-  
-  .shopify-buy__product-img-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 30px 0px 0px 60px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 65%;
-    -ms-flex: 0 0 65%;
-    flex: 0 0 65%;
-  }
-  
-  .detail_container {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 35%;
-    -ms-flex: 0 0 35%;
-    flex: 0 0 35%;
-    color: #333;
-    padding: 60px;
-    max-height: 100vh;
-    overflow-y: scroll;
-  }
-  
-  .product_footer {
-    display: -ms-grid;
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    grid-template-areas: "Area Area Area Area-2 Area-2 Area-2 Area-3 Area-4 Area-4 Area-5 Area-5";
-    -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-    background-color: #d2d2d2;
-  }
-  
-  .shopify-buy__product__variant-img {
-    width: 100%;
-    padding: 0px;
-  }
-  
-  .link {
+.grid.flipped {
+  grid-column-gap: 36px;
+}
+
+.recent-work-left-img {
+  width: 100%;
+}
+
+.recent_work_title {
+  margin-top: 32px;
+  font-family: Garamondpremrpro, sans-serif;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 400;
+}
+
+.recent_work_collection {
+  margin-bottom: 18px;
+  font-size: 28px;
+  line-height: 38px;
+}
+
+.recent-work-wrapper {
+  padding: 60px;
+  background-color: #f0f0f0;
+}
+
+.body {
+  font-family: Bitter, serif;
+}
+
+.recent_work_price {
+  font-family: 'Nhaasgroteskdspro 45lt', sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.recent_work_new {
+  font-family: 'Nhaasgroteskdspro 45lt', sans-serif;
+  color: #060;
+  font-size: 22px;
+  line-height: 60px;
+}
+
+.recent_work_purchase_option {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: Garamondpremrpro, sans-serif;
+  color: #6b6b6b;
+  font-size: 22px;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.recent_work_purchase_decoration {
+  width: 160px;
+  margin-left: 30px;
+  padding-top: 0px;
+  border-bottom: 2px solid #b4b4b4;
+}
+
+.recent-work-right-img {
+  width: 100%;
+}
+
+.recent-work-3-img-wrap {
+  height: auto;
+}
+
+.grid-2 {
+  grid-column-gap: 16px;
+  grid-template-areas: "Area Area Area-2 Area-2 Area-2 Area-2"
+    "Area Area Area-2 Area-2 Area-2 Area-2"
+    "Area Area Area-2 Area-2 Area-2 Area-2"
+    "Area Area Area-2 Area-2 Area-2 Area-2";
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+.div-block-3 {
+  margin-bottom: 100px;
+}
+
+.image-3 {
+  width: 100%;
+}
+
+.image-4 {
+  width: 100%;
+}
+
+.recent-work-3 {
+  margin-top: 140px;
+}
+
+@media screen and (max-width: 767px) {
+  .grid {
     display: block;
-    color: #666666;
-    font-size: 11px;
-    text-decoration: none;
-  }
-  
-  .div-block-5 {
-    padding: 20px 20px 20px 60px;
-  }
-  
-  .link-2 {
-    display: block;
-  }
-  
-  .div-block-6 {
-    padding: 20px;
-  }
-  
-  .text-block {
-    color: #000;
-    font-size: 11px;
-  }
-  
-  .text-block-2 {
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 300;
-  }
-  
-  .section {
-    font-family: Montserrat, sans-serif;
-  }
-  
-  .shopify-buy__btn {
-    width: 180px;
-    padding: 18px 30px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #818181;
-    border-radius: 40px;
-    background-color: transparent;
-    color: #333;
-    text-align: center;
-  }
-  
-  .div-block-7 {
-    padding-right: 80px;
-  }
-  
-  #w-node-_164e7708-68ac-ca47-0b9a-f82be4cdf052-62c7c7ee {
-    -ms-grid-row: 1;
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 5;
-    grid-area: Area-2;
-  }
-  
-  #w-node-_86f9db59-f15b-8f94-8e84-8057117d35fd-62c7c7ee {
-    -ms-grid-row: 1;
-    -ms-grid-column: 15;
-    -ms-grid-column-span: 3;
-    grid-area: Area-4;
-    -ms-grid-row-align: center;
-    align-self: center;
-    -ms-grid-column-align: start;
-    justify-self: start;
-  }
-  
-  #w-node-_04595991-cd52-392e-a690-cc68d5684f6d-62c7c7ee {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-    grid-area: Area;
-  }
-  
-  #w-node-_9cc68a89-db0a-ef85-4e4f-829a2ea86ea2-62c7c7ee {
-    -ms-grid-row: 1;
-    -ms-grid-column: 19;
-    -ms-grid-column-span: 3;
-    grid-area: Area-5;
-    -ms-grid-row-align: center;
-    align-self: center;
-    -ms-grid-column-align: center;
-    justify-self: center;
   }
 
-  .shopify-buy__product__title {
-    font-family: 'Garamondpremrpro';
-    font-size: 42px;
+  .recent-work-right {
+    margin-top: 140px;
   }
+}
 
- .no-variant-text {
-   font-family: 'Nhaasgroteskdspro 45lt';
-   font-size: 20px;
-    margin-top: 22px;
- }
+#recent-work-left.w-node-_169b683b-d13b-61ce-8a0f-bd9da3a9e7e9-0f696565 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: Area;
+}
 
- .no-variant-description {
+.grid-2>#recent-work-left.w-node-_169b683b-d13b-61ce-8a0f-bd9da3a9e7e9-0f696565 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+}
+
+#recent-work-right.w-node-_13a1793f-6228-ada8-5ebc-13e502a0c893-0f696565 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 3;
+  grid-area: Area-2;
+}
+
+.grid-2>#recent-work-right.w-node-_13a1793f-6228-ada8-5ebc-13e502a0c893-0f696565 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 7;
+}
+
+#w-node-d430a835-63f5-0995-8ed8-4fdebfb748a2-0d09bb43 {
+  -ms-grid-column: span 2;
+  grid-column-start: span 2;
+  -ms-grid-column-span: 2;
+  grid-column-end: span 2;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_2a2b7829-7cb7-215e-0883-8b24995eb0d7-0d09bb43 {
+  -ms-grid-column: span 4;
+  grid-column-start: span 4;
+  -ms-grid-column-span: 4;
+  grid-column-end: span 4;
+  -ms-grid-row: span 4;
+  grid-row-start: span 4;
+  -ms-grid-row-span: 4;
+  grid-row-end: span 4;
+}
+
+@font-face {
   font-family: 'Nhaasgroteskdspro 45lt';
-  font-size: 18px;
-  margin-top: 9px;
- }
-
+  src: url('../fonts/neue_haas/NHaasGroteskDSPro-45Lt.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Garamondpremrpro';
+  src: url('../fonts/garamond/GaramondPremrPro.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
