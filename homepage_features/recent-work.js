@@ -7,7 +7,7 @@ const createRecentWorkLeft = (product) => {
     //need collection solution before implementing
     // e("recent-work-collection-left").innerHTML = "";
 
-    e("recent-work-purchase-left").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-purchase-left").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 
 }
 
@@ -17,7 +17,7 @@ const createRecentWorkRight = (product) => {
     e("recent-work-title-right").innerHTML = product.title;
     e("recent-work-price-right").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("recent-work-purchase-right").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-purchase-right").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 }
 
 const createRecentWorkThird = (product) => {

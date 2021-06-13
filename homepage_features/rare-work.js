@@ -7,7 +7,7 @@ const createrareWorkLeft = (product) => {
     //need collection solution before implementing
     // e("rare-work-collection-left").innerHTML = "";
 
-    e("rare-work-left-purchase").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-left-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 
 }
 
@@ -17,7 +17,7 @@ const createrareWorkRight = (product) => {
     e("rare-work-right-title").innerHTML = product.title;
     e("rare-work-right-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("rare-work-right-purchase").setAttribute("href", `../product-page/index.html?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-right-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
 }
 
 const createrareWorkThird = (product) => {
