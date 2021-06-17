@@ -1,7 +1,11 @@
 // var gid = atob(productId).substring(20);
-var url_string = window.location.href;
-var url = new URL(url_string);
-var buyButtonId = url.searchParams.get("productId"); 
+// var url_string = window.location.pathname;
+// var url = new URL(url_string);
+let windowLoc = window.location.pathname.split('/');
+var buyButtonId = windowLoc[windowLoc.length - 1];
+
+console.log(buyButtonId);
+// var buyButtonId = url.searchParams.get("productId"); 
 
 var selectedOptions = {};
 

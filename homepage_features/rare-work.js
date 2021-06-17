@@ -5,6 +5,8 @@ const createrareWorkLeft = (product) => {
     e("rare-work-left-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
     //need collection solution before implementing
+    var collection = product.descriptionHtml.toString().search("Series:");
+    console.log(collection);
     // e("rare-work-collection-left").innerHTML = "";
 
     e("rare-work-left-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
@@ -12,6 +14,7 @@ const createrareWorkLeft = (product) => {
 }
 
 const createrareWorkRight = (product) => {
+    console.log(product);
     //sets smaller righthand photo image
     e("rare-work-right-img").src = product.images[0].src;
     e("rare-work-right-title").innerHTML = product.title;
