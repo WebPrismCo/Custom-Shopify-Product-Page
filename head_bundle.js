@@ -13,3 +13,5 @@ const findLowestPrice = (p) => {
     return Math.min(...prices)
 
 }
+
+var ui = ShopifyBuy.UI.init(client);

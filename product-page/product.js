@@ -1,19 +1,16 @@
-// var gid = atob(productId).substring(20);
-// var url_string = window.location.pathname;
-// var url = new URL(url_string);
-let windowLoc = window.location.pathname.split('/');
-var buyButtonId = windowLoc[windowLoc.length - 1];
+// let windowLoc = window.location.pathname.split('/');
+// var buyButtonId = windowLoc[windowLoc.length - 1];
 
-console.log(buyButtonId);
-// var buyButtonId = url.searchParams.get("productId"); 
+// var buyButtonId = url.searchParams.get("productId");
+
+var buyButtonId = 1353893642341;
 
 var selectedOptions = {};
-
-var ui = ShopifyBuy.UI.init(client);
 
 ui.createComponent('product', {
     id: buyButtonId,
     node: document.getElementById('my-product'),
+    toggles: [{node: document.getElementById('fr_ghost_toggle')}],
     options: {
         product: {
             id: buyButtonId,
@@ -103,12 +100,19 @@ ui.createComponent('product', {
             }
         },
         toggle: {
+            sticky: false,
+            iframe: false,
+            contents: {
+                icon: false,
+                title: false,
+                count: true
+            },
             styles: {
                 wrapper: {
-                    'background-color': '#333'
+                    'background-color': 'transparent'
                 },
                 toggle: {
-                    'background-color': '#333'
+                    'background-color': 'transparent'
                 }
             }
         }
@@ -183,8 +187,6 @@ ui.createComponent('product', {
 
             var intendedId = e.target.id.substring(4);
 
-            console.log(intendedId);
-
             var  radioToUpdate = document.getElementById(intendedId);
             
             product.updateVariant(radioToUpdate.name, radioToUpdate.value);
@@ -202,5 +204,4 @@ ui.createComponent('product', {
     });
 }).catch((err) => {
     console.log(err);
-})
-
+});

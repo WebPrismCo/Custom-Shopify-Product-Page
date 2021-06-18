@@ -1,11 +1,24 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://sdks.shopifycdn.com/buy-button/1.0.0/buybutton.js"></script>
+        <script src="./head_bundle.js"></script>
+        <link href="./product-page/cart-styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <div id="fr_ghost_cart"></div>
+        <div id="ghost_cart_menu_container">
+            <svg viewBox="0 0 80 80" width="40" height="40">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+            </svg>
+            <div id="fr_ghost_toggle" class="shopify-toggle"></div>
+        </div>
         <h1>Frank Relle API Integration Demo</h1>
         <a href="/homepage_features/feature_embed.html">Homepage Features Demo</a>
         <br>
         <a href="/product-page/index.html?productId=77139302">Configurator Demo</a>
     </body>
+    <script src="product-page/cart.js"></script>
 </html>

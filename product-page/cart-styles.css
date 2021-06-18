@@ -1,0 +1,15 @@
+.shopify-buy--visually-hidden {
+    display: none;
+}
+
+#ghost_cart_menu_container {
+    display: flex;
+}
+
+#fr_ghost_toggle {
+    float: right;
+}
+
+svg {
+    margin-top: 20px;
+}
