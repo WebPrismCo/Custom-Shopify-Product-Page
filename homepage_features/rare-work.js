@@ -4,12 +4,9 @@ const createrareWorkLeft = (product) => {
     e("rare-work-left-title").innerHTML = product.title;
     e("rare-work-left-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    //need collection solution before implementing
-    var collection = product.descriptionHtml.toString().search("Series:");
-    console.log(collection);
-    // e("rare-work-collection-left").innerHTML = "";
+    e("rare-work-left-collection").innerHTML = "Collection: " + findProductCollectionFromDescription(product.descriptionHtml);
 
-    e("rare-work-left-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-left-purchase").setAttribute("href", `../product/s${atob(product.id).substring(22)}`);
 
 }
 
@@ -20,7 +17,9 @@ const createrareWorkRight = (product) => {
     e("rare-work-right-title").innerHTML = product.title;
     e("rare-work-right-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("rare-work-right-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-right-collection").innerHTML = "Collection: " + findProductCollectionFromDescription(product.descriptionHtml);
+
+    e("rare-work-right-purchase").setAttribute("href", `../product/s${atob(product.id).substring(22)}`);
 }
 
 const createrareWorkThird = (product) => {
@@ -28,7 +27,9 @@ const createrareWorkThird = (product) => {
     e("rare-work-large-title").innerHTML = product.title;
     e("rare-work-large-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("rare-work-large-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("rare-work-large-collection").innerHTML = "Collection: " + findProductCollectionFromDescription(product.descriptionHtml);
+
+    e("rare-work-large-purchase").setAttribute("href", `../product/s${atob(product.id).substring(22)}`);
 }
 
 client.collection.fetchAllWithProducts().then((collections) => {
@@ -36,5 +37,14 @@ client.collection.fetchAllWithProducts().then((collections) => {
     createrareWorkLeft(rareWork.products[0]);
     createrareWorkRight(rareWork.products[1]);
     createrareWorkThird(rareWork.products[2]);
+
     
+
+    let findSeries = rareWork.products[0].descriptionHtml;
+    let findStartSeries = findSeries.search("<span>Series:");
+    let startSeries = findSeries.substring(findStartSeries);
+    let endSeries = startSeries.search("</span>");
+
+    console.log(startSeries.substring(13,endSeries).trim());
+
 });
