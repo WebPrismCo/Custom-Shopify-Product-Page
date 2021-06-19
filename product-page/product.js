@@ -6,9 +6,12 @@ var buyButtonId = windowLoc[windowLoc.length - 1];
 var selectedOptions = {};
 
 ui.createComponent('product', {
-    id: buyButtonId,
-    node: document.getElementById('my-product'),
-    toggles: [{node: document.getElementById('fr_ghost_toggle')}],
+    //test
+    // id: buyButtonId,
+    // node: document.getElementById('my-product'),
+    //prod
+    node: document.window,
+    toggles: [{node: document.querySelector('.header-display-mobile')}],
     options: {
         product: {
             id: buyButtonId,
