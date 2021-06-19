@@ -10,8 +10,9 @@ ui.createComponent('product', {
     // id: buyButtonId,
     // node: document.getElementById('my-product'),
     //prod
+    //.header-display-mobile
     node: document.window,
-    toggles: [{node: document.querySelector('.header-display-mobile')}],
+    toggles: [{node: document.querySelector('.header-burger')}],
     options: {
         product: {
             id: buyButtonId,
