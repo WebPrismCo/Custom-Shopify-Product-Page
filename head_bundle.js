@@ -16,7 +16,7 @@ const findLowestPrice = (p) => {
 
 const findProductCollectionFromDescription = (descriptionHtml) => {
 
-    console.log(descriptionHtml);
+    // console.log(descriptionHtml);
     let findSeries = descriptionHtml;
 
     let findStartSeries = findSeries.search("Series:");
@@ -24,7 +24,7 @@ const findProductCollectionFromDescription = (descriptionHtml) => {
     let endSeries = startSeries.search("<");
 
     let collection = startSeries.substring(8,endSeries).trim();
-    console.log(collection);
+    // console.log(collection);
 
     return collection;
 }
