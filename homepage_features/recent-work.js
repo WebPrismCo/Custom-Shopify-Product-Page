@@ -7,7 +7,7 @@ const createRecentWorkLeft = (product) => {
     //need collection solution before implementing
     // e("recent-work-collection-left").innerHTML = "";
 
-    e("recent-work-purchase-left").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-purchase-left").setAttribute("href", `../product/${atob(product.id).substring(22)}`);
 
 }
 
@@ -17,7 +17,7 @@ const createRecentWorkRight = (product) => {
     e("recent-work-title-right").innerHTML = product.title;
     e("recent-work-price-right").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("recent-work-purchase-right").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-purchase-right").setAttribute("href", `../product/${atob(product.id).substring(22)}`);
 }
 
 const createRecentWorkThird = (product) => {
@@ -25,7 +25,7 @@ const createRecentWorkThird = (product) => {
     e("recent-work-large-title").innerHTML = product.title;
     e("recent-work-large-price").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("recent-work-large-purchase").setAttribute("href", `../product?productId=${atob(product.id).substring(22)}`);
+    e("recent-work-large-purchase").setAttribute("href", `../product/${atob(product.id).substring(22)}`);
 }
 
 // client.collection.fetchAllWithProducts().then((collections) => {
