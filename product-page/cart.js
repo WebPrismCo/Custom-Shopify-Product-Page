@@ -9,6 +9,9 @@ ui.createComponent('cart', {
                 icon: false,
                 title: false,
                 count: true
+            },
+            styles: {
+                color: "#333"
             }
         },
         cart: {
