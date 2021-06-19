@@ -16,7 +16,7 @@ const createRecentWorkRight = (product) => {
     e("recent-work-title-right").innerHTML = product.title;
     e("recent-work-price-right").innerHTML = `Starting at $${findLowestPrice(product)}`;
 
-    e("recent-work-title-right").innerHTML = "Collection: " + findProductCollectionFromDescription(product.descriptionHtml);
+    e("recent-work-collection-right").innerHTML = "Collection: " + findProductCollectionFromDescription(product.descriptionHtml);
 
     e("recent-work-purchase-right").setAttribute("href", `../product/${atob(product.id).substring(22)}`);
 }
