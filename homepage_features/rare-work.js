@@ -37,14 +37,4 @@ client.collection.fetchAllWithProducts().then((collections) => {
     createrareWorkLeft(rareWork.products[0]);
     createrareWorkRight(rareWork.products[1]);
     createrareWorkThird(rareWork.products[2]);
-
-    
-
-    let findSeries = rareWork.products[0].descriptionHtml;
-    let findStartSeries = findSeries.search("<span>Series:");
-    let startSeries = findSeries.substring(findStartSeries);
-    let endSeries = startSeries.search("</span>");
-
-    console.log(startSeries.substring(13,endSeries).trim());
-
 });
