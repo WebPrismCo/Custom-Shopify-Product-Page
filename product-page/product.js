@@ -11,7 +11,7 @@ ui.createComponent('product', {
     // node: document.getElementById('my-product'),
     //prod
     node: document.window,
-    toggles: [{node: document.querySelector('.header-display-mobile')}],
+    toggles: [{node: document.querySelector('.header-inner')}],
     options: {
         product: {
             id: buyButtonId,
