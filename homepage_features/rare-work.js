@@ -11,7 +11,6 @@ const createrareWorkLeft = (product) => {
 }
 
 const createrareWorkRight = (product) => {
-    console.log(product);
     //sets smaller righthand photo image
     e("rare-work-right-img").src = product.images[0].src;
     e("rare-work-right-title").innerHTML = product.title;
