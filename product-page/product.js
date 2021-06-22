@@ -1,16 +1,13 @@
 let windowLoc = window.location.pathname.split('/');
-var buyButtonId = windowLoc[windowLoc.length - 1];
+// var buyButtonId = windowLoc[windowLoc.length - 1];
 
-// var buyButtonId = 1353893642341;
+var buyButtonId = 1353893642341;
 
 var selectedOptions = {};
 
 ui.createComponent('product', {
-    //test
     id: buyButtonId,
-    // node: document.getElementById('my-product'),
-    //prod
-    node: document.window,
+    node: document.getElementById('my-product'),
     toggles: [{node: document.querySelector('.header-inner')}],
     options: {
         product: {
