@@ -7,7 +7,7 @@ var selectedOptions = {};
 
 ui.createComponent('product', {
     //test
-    // id: buyButtonId,
+    id: buyButtonId,
     // node: document.getElementById('my-product'),
     //prod
     node: document.window,
