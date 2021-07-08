@@ -1,7 +1,7 @@
 let windowLoc = window.location.pathname.split('/');
 var buyButtonId = windowLoc[windowLoc.length - 1];
 
-// var buyButtonId = 1353893642341;
+// var buyButtonId = 6576166699075;
 
 var selectedOptions = {};
 
@@ -31,9 +31,10 @@ ui.createComponent('product', {
                                                     <form id={{name}} data-element="product.options">
                                                         <p>{{name}}</p>
                                                         {{#values}}
-                                                        <div class="radio-button-field" data-value={{value}}>
-                                                            <input id="{{name}}{{value}}" type="radio" class={{data.classes.product.radio}} name={{name}} value="{{value}}" data-value={{value}}><span id="span{{name}}{{value}}" class="fake_radio" data-value={{value}}></span>
-                                                            <label for="{{name}}{{value}}" class={{data.classes.product.radioLabel}} data-value={{value}}>{{value}}</label>
+                                                        <div class="radio-button-field" data-value="{{value}}">
+                                                            <input id="{{name}}{{value}}" type="radio" class={{data.classes.product.radio}} name="{{name}}" value="{{value}}" data-value="{{value}}">
+                                                            <span id="{{name}}{{value}}" class="fake_radio" data-value="{{value}}"></span>
+                                                            <label for="{{name}}{{value}}" class={{data.classes.product.radioLabel}} data-value="{{value}}">{{value}}</label>
                                                         </div>
                                                         {{/values}}
                                                     </form>
@@ -130,11 +131,14 @@ ui.createComponent('product', {
     const variantNames = Object.keys(selectedOptions);
     const variantOptions = Object.values(selectedOptions);
 
+    // console.log(product.model);
+
     if(product.hasVariants === true){
         // const variantNames = Object.keys(selectedOptions);
         // const variantOptions = Object.values(selectedOptions);
 
         variantNames.forEach((name) => {
+            // console.log(name);
             var id = name + selectedOptions[name];
             document.getElementById(id).checked = true;
         });
@@ -165,7 +169,7 @@ ui.createComponent('product', {
 
     buttonArray.forEach((elem) => {
         elem.addEventListener('change', (e) => {
-            
+
             product.updateVariant(e.target.name, e.target.value);
 
             selectedOptions = product.selectedOptions;
@@ -183,9 +187,11 @@ ui.createComponent('product', {
     fakeButtonArray.forEach((elem) => {
         elem.addEventListener('click', (e) => {
 
-            var intendedId = e.target.id.substring(4);
+            //might need to remove substring, was an error in og code
+            var intendedId = e.target.id;
 
-            var  radioToUpdate = document.getElementById(intendedId);
+            var radioToUpdate = document.getElementById(intendedId);
+
             
             product.updateVariant(radioToUpdate.name, radioToUpdate.value);
 
