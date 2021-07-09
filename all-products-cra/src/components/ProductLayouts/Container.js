@@ -1,5 +1,4 @@
 import React from 'react';
-import Client from 'shopify-buy';
 import Lay1 from './Lay1'
 import LaySingle from './LaySingle';
 import Lay2 from './Lay2';
@@ -10,18 +9,14 @@ class Container extends React.Component {
         super(props)
 
         this.state = {
+            client: props.client,
             previousPages: [],
             page: 0
         };
     }
 
-    client = Client.buildClient({
-        domain: "frankrelle.myshopify.com",
-        storefrontAccessToken: '50c29f9cb69bf6a23e89e19095c2333a'
-    });
-
     getInitProducts = () => {
-        this.client.product.fetchAll(9).then((products) => {
+        this.state.client.product.fetchAll(9).then((products) => {
             this.setState({
                 products: products
             });
@@ -47,7 +42,7 @@ class Container extends React.Component {
             products: this.state.products,
         });
 
-        this.client.fetchNextPage(this.state.products).then((data) => {
+        this.state.client.fetchNextPage(this.state.products).then((data) => {
             this.setState({
                 previousPages: newPreviousPages,
                 products: data.model,
