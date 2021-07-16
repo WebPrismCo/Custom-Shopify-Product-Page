@@ -1,44 +1,57 @@
 <html>
-    <head>
-        <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
-        <script src="../head_bundle.js" type="application/javascript"></script>
-        <link href="rare-work-styles.css" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div class="recent-work-wrapper">
-            <div class="recent-work-3-img-wrap"><img src="" loading="lazy" width="980" sizes="(max-width: 479px) 75vw, (max-width: 767px) 84vw, (max-width: 991px) 88vw, 99vw" id="rare-work-large-img" alt="" class="image-3"></div>
-            <div class="div-block-3">
-            <h1 id="rare-work-large-title" class="recent_work_title"></h1>
-            <div id="rare-work-large-collection" class="recent_work_collection"></div>
-            <div id="rare-work-large-price" class="recent_work_price"></div>
-            <div class="recent_work_new">New</div>
-            <a id="rare-work-large-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
-            <div class="recent_work_purchase_decoration"></div>
+
+<head>
+    <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+    <script src="../head_bundle.js" type="application/javascript"></script>
+    <link href="rare-work-styles.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="flex flex-row-reverse p-16">
+            <div class="w-3/4">
+                <img src="" loading="lazy" id="rare-work-large-img" alt="" />
             </div>
-            <div class="w-layout-grid grid-2">
-            <div id="w-node-d430a835-63f5-0995-8ed8-4fdebfb748a2-0d09bb43" class="rare-work-left"><img src="" loading="lazy" width="812" id="rare-work-left-img" alt="" class="recent-work-left-img">
-                <div>
-                <h1 id="rare-work-left-title" class="recent_work_title"></h1>
-                <div id="rare-work-left-collection" class="recent_work_collection"></div>
-                <div id="rare-work-left-price" class="recent_work_price"></div>
+            <div class="w-1/4 p-8">
+                <h1 id="rare-work-large-title"></h1>
+                <div id="rare-work-large-collection"></div>
+                <div id="rare-work-large-price"></div>
                 <div class="recent_work_new">New</div>
-                <a id="rare-work-left-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
+                <a id="rare-work-large-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
                 <div class="recent_work_purchase_decoration"></div>
-                </div>
-            </div>
-            <div id="w-node-_2a2b7829-7cb7-215e-0883-8b24995eb0d7-0d09bb43" class="rare-work-right"><img src="" loading="lazy" width="376" sizes="(max-width: 479px) 75vw, (max-width: 767px) 84vw, (max-width: 991px) 88vw, 99vw" id="rare-work-right-img" alt="" class="recent-work-right-img">
-                <div>
-                <h1 id="rare-work-right-title" class="recent_work_title"></h1>
-                <div id="rare-work-right-collection" class="recent_work_collection"></div>
-                <div id="rare-work-right-price" class="recent_work_price"></div>
-                <div class="recent_work_new">New</div>
-                <a id="rare-work-right-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
-                <div class="recent_work_purchase_decoration"></div>
-                </div>
-            </div>
             </div>
         </div>
-    </body>
-    <script src="rare-work.js"></script>
+        <div>
+            <div class="flex pb-16 pt-16 pr-16">
+                <div class="w-3/4">
+                    <img src="" loading="lazy" id="rare-work-left-img" alt="" />
+                </div>
+                <div class="w-1/4 p-8">
+                    <h1 id="rare-work-left-title"></h1>
+                    <div id="rare-work-left-collection"></div>
+                    <div id="rare-work-left-price"></div>
+                    <div class="recent_work_new">New</div>
+                    <a id="rare-work-left-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
+                    <div class="recent_work_purchase_decoration"></div>
+                </div>
+            </div>
+            <div class="flex flex-row-reverse p-16">
+                <div class="w-3/4">
+                    <img src="" loading="lazy" id="rare-work-right-img" alt="" />
+                </div>
+                <div class="w-1/4 p-8">
+                    <h1 id="rare-work-right-title"></h1>
+                    <div id="rare-work-right-collection"></div>
+                    <div id="rare-work-right-price"></div>
+                    <div class="recent_work_new">New</div>
+                    <a id="rare-work-right-purchase" href="#" class="recent_work_purchase_option">Purchase Options</a>
+                    <div class="recent_work_purchase_decoration"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="rare-work.js"></script>
+
 </html>

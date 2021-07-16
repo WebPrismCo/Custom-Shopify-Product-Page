@@ -34,5 +34,5 @@ const createRecentWorkThird = (product) => {
 client.product.fetchAll().then((products) => {
     createRecentWorkLeft(products[0]);
     createRecentWorkRight(products[1]);
-    createRecentWorkThird(products[2]);
+    // createRecentWorkThird(products[2]);
 });
