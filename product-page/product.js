@@ -1,7 +1,7 @@
 let windowLoc = window.location.pathname.split('/');
-// var buyButtonId = windowLoc[windowLoc.length - 1];
+var buyButtonId = windowLoc[windowLoc.length - 1];
 
-var buyButtonId = 6576167157827;
+// var buyButtonId = 6576167157827;
 
 var selectedOptions = {
     size: null,
