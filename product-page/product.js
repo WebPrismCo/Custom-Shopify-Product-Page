@@ -3,7 +3,44 @@ let windowLoc = window.location.pathname.split('/');
 
 var buyButtonId = 6576167157827;
 
-var selectedOptions = {};
+var selectedOptions = {
+    size: null,
+    frame: null,
+    glass: null
+};
+
+const handleNoOptions = () => {
+    let detCon = document.getElementById("detail_container");
+
+    variantNames.forEach((o) => {
+        let new_node = document.createElement("div");
+        new_node.classList.add("no-variant-text");
+
+        new_node.appendChild(document.createTextNode("Available as: "));
+        // new_node.appendChild(document.createTextNode(product.selectedOptions[o]));
+
+        let variant_node = document.createElement("div");
+        variant_node.classList.add("no-variant-description");
+        variant_node.innerHTML = `${product.selectedOptions[o]}`;
+
+        detCon.appendChild(new_node);
+        detCon.appendChild(variant_node);
+    })
+}
+
+const disableFrameGlass = () => {
+    document.querySelectorAll(".Frame.Type").forEach((n) => {
+        n.disabled = true;
+    });
+
+    document.querySelectorAll(".Glass.Choice").forEach((n) => {
+        n.disabled = true;
+    })
+}
+
+const handleVariantSelection = (e, product) => {
+
+};
 
 ui.createComponent('product', {
     id: buyButtonId,
@@ -13,14 +50,15 @@ ui.createComponent('product', {
         product: {
             id: buyButtonId,
             iframe: false,
+            width: '2048px',
             templates: {
-                customLayout: `<div class="section">
+                customLayout: `<div class="section" style="padding-bottom: 80px">
                                     <div class="div-block">
-                                        {{#data.currentImage.srcLarge}}
+                                        {{#data.currentImage.src}}
                                             <div class="{{data.classes.product.imgWrapper}}" data-element="product.imgWrapper">
-                                                <img alt="{{data.currentImage.altText}}" data-element="product.img" class="{{data.classes.product.img}}" src="{{data.currentImage.srcLarge}}" />
+                                                <img alt="{{data.currentImage.altText}}" data-element="product.img" class="{{data.classes.product.img}}" src="{{data.currentImage.src}}" />
                                             </div>
-                                        {{/data.currentImage.srcLarge}}
+                                        {{/data.currentImage.src}}
                                         <div class="detail_container" id="detail_container">
                                             <div>
                                                 <h1 class="{{data.classes.product.title}}" data-element="product.title">{{data.title}}</h1>
@@ -28,15 +66,17 @@ ui.createComponent('product', {
                                             <div>
                                                 {{#data.hasVariants}}
                                                     {{#data.options}}
-                                                    <form id={{name}} data-element="product.options">
+                                                    <form id="{{name}}" data-element="product.options">
                                                         <p>{{name}}</p>
+                                                        <fieldset class="{{name}}">
                                                         {{#values}}
-                                                        <div class="radio-button-field" data-value="{{value}}">
-                                                            <input id="{{name}}{{value}}" type="radio" class={{data.classes.product.radio}} name="{{name}}" value="{{value}}" data-value="{{value}}">
-                                                            <span id="{{name}}{{value}}" class="fake_radio" data-value="{{value}}"></span>
-                                                            <label for="{{name}}{{value}}" class={{data.classes.product.radioLabel}} data-value="{{value}}">{{value}}</label>
-                                                        </div>
+                                                        <label for="{{name}}{{value}}" class={{data.classes.product.radioLabel}} data-value="{{value}}">
+                                                            <input id="{{name}}{{value}}" type="radio" class="{{data.classes.product.radio}}" radio-button-field" name="{{name}}" value="{{value}}" data-value="{{value}}">
+                                                            <div class="check"></div>
+                                                            {{value}}
+                                                        </label>
                                                         {{/values}}
+                                                        </fieldset>
                                                     </form>
                                                     {{/data.options}}
                                                 {{/data.hasVariants}}
@@ -126,84 +166,26 @@ ui.createComponent('product', {
 })
 .then((product) => {
 
-    selectedOptions = product.selectedOptions;
+    // selectedOptions = product.selectedOptions;
 
     const variantNames = Object.keys(selectedOptions);
     const variantOptions = Object.values(selectedOptions);
 
-    // console.log(product.model);
+    console.log(product);
 
     if(product.hasVariants === true){
-        // const variantNames = Object.keys(selectedOptions);
-        // const variantOptions = Object.values(selectedOptions);
-
-        variantNames.forEach((name) => {
-            // console.log(name);
-            var id = name + selectedOptions[name];
-            document.getElementById(id).checked = true;
-        });
+        disableFrameGlass();
     } else {
-
-        let detCon = document.getElementById("detail_container");
-
-        variantNames.forEach((o) => {
-            let new_node = document.createElement("div");
-            new_node.classList.add("no-variant-text");
-
-            new_node.appendChild(document.createTextNode("Available as: "));
-            // new_node.appendChild(document.createTextNode(product.selectedOptions[o]));
-
-            let variant_node = document.createElement("div");
-            variant_node.classList.add("no-variant-description");
-            variant_node.innerHTML = `${product.selectedOptions[o]}`;
-
-            detCon.appendChild(new_node);
-            detCon.appendChild(variant_node);
-        })
-
-
+        handleNoOptions();
     }
     
-    var buttonArray = document.querySelectorAll('.radio-button-field');
-    var fakeButtonArray = document.querySelectorAll('.fake_radio');
+    var buttonArray = document.querySelectorAll('fieldset');
 
     buttonArray.forEach((elem) => {
         elem.addEventListener('change', (e) => {
 
-            product.updateVariant(e.target.name, e.target.value);
-
-            selectedOptions = product.selectedOptions;
-
-            const variantNames = Object.keys(selectedOptions);
-            const variantOptions = Object.values(selectedOptions);
-        
-            variantNames.forEach((name) => {
-                var id = name + selectedOptions[name];
-                document.getElementById(id).checked = true;
-            });
-        })
-    });
-
-    fakeButtonArray.forEach((elem) => {
-        elem.addEventListener('click', (e) => {
-
-            //might need to remove substring, was an error in og code
-            var intendedId = e.target.id;
-
-            var radioToUpdate = document.getElementById(intendedId);
-
-            
-            product.updateVariant(radioToUpdate.name, radioToUpdate.value);
-
-            selectedOptions = product.selectedOptions;
-
-            const variantNames = Object.keys(selectedOptions);
-            const variantOptions = Object.values(selectedOptions);
-        
-            variantNames.forEach((name) => {
-                var id = name + selectedOptions[name];
-                document.getElementById(id).checked = true;
-            });
+            console.log("fired");
+            handleVariantSelection(e.target.value, product);
         })
     });
 }).catch((err) => {

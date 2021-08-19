@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/webprismdevin/Custom-Shopify-Product-Page/issues"
   },
-  "homepage": "https://github.com/webprismdevin/Custom-Shopify-Product-Page#readme"
+  "homepage": "https://github.com/webprismdevin/Custom-Shopify-Product-Page#readme",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "watchify": "^4.0.0"
+  }
 }

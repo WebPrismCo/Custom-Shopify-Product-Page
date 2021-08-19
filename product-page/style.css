@@ -28,7 +28,7 @@
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
   }
   
   .shopify-buy__product-img-wrapper {
@@ -59,7 +59,7 @@
     color: #333;
     padding: 60px;
     max-height: 100vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
   
   .product_footer {
@@ -225,32 +225,47 @@
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
-.radio-button {
-    opacity: 0;
-    height: 0px;
-    width: 0px;
-}
-
-.fake_radio {
-    -webkit-box-ordinal-group: 0;
-    -webkit-order: -1;
-    -ms-flex-order: -1;
-    order: -1;
-    margin-top: 3px;
-    height: 12px;
-    width: 12px;
-    border: 1px solid black;
-    border-radius: 50px;
-}
-
-.radio-button-field > input[type="radio"]:checked + span {
-    background-color: black;
-}
-
 p {
     font-weight: 200;
 }
 
 .product_container {
     margin: 0 auto 0 auto;
+}
+
+/* new radio button css */
+
+div label input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+div label span {
+  font-family: 'Nh35lt';
+  font-size: '15px';
+  line-height: '22px';
+}
+
+div label div.check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+/* new css for radios */
+
+input[type=radio]:checked ~ .check {
+  border: 1px solid black;
+  border-radius: 100%;
+  background-color: black;
+}
+
+fieldset:disabled {
+  color: grey;
+}
+
+fieldset:disabled > label > .check {
+  color: grey;
+  border-color: grey;
 }

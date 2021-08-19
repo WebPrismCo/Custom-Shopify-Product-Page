@@ -1,0 +1,7 @@
+.shopify-buy__cart-item > .shopify-buy__cart-item__image {
+    /* visibility: hidden !important; */
+}
+
+.shopify-buy__cart-item__image {
+    width: 100px;
+}
